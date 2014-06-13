@@ -1,12 +1,56 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Lobster+Two);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
 
+$font-family-sans-serif: 'Raleway', 'Helvetica';
+
+$body-bg: Black;
+
+.home-title {
+	font-family: 'Lobster Two', cursive;
+	color: #CC29A3;
+
+}
+
+// Jumbotron 
+$jumbotron-bg: Black;
+$jumbotron-color: #FF66CC;
+
+.jumbotron {	
+	text-align: Center;	
+}
+
+//buttons
+
+$btn-default-color: White;
+$btn-default-border: White;
+$btn-default-bg: Black;
+
+.btn {
+	margin: 10px;
+}
+
+// Navbar
+$navbar-default-color: #FF66CC;
+$navbar-inverse-bg: Black;
+
+.signin {
+	float: center;
+	
+}
+
+//registration
+
+
+
+
+
+
+
+
+
+
+
 
 @import 'bootstrap';
-
-div {
-
-	font-family: 'Raleway', sans-serif;
-}
