@@ -42,13 +42,14 @@ $navbar-inverse-bg: Black;
 
 //registration
 
-$legend-color: White;
+
 $input-color: Black !important;
 $panel-bg: Black;
 $panel-default-text: White;
 $panel-default-heading-bg: Black;
 $panel-footer-bg: Black;
 $input-color-placeholder: Red;
+$pandel-default-border: Black;
 
 
 .btn {
@@ -59,12 +60,21 @@ $input-color-placeholder: Red;
 	padding: 5px;
 }
 
-h2 {
+.label-color {
 	color: White;
 }
 
+.second-label {
+	color: #9CD4D4;
+}
 
+i {
+	color: #9CD4D4;
+}
 
+ h2, h3, p {
+	color: White !important;
+}
 
 
 
