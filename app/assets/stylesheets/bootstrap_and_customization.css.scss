@@ -42,11 +42,26 @@ $navbar-inverse-bg: Black;
 
 //registration
 
+$legend-color: White;
+$input-color: Black !important;
+$panel-bg: Black;
+$panel-default-text: White;
+$panel-default-heading-bg: Black;
+$panel-footer-bg: Black;
+$input-color-placeholder: Red;
 
 
+.btn {
+	margin: 5px, 5px, 5px, 5px;
+}
 
+.form-group {
+	padding: 5px;
+}
 
-
+h2 {
+	color: White;
+}
 
 
 
