@@ -19902,3 +19902,17 @@ Started GET "/assets/bootstrap_and_customization.css.scss" for 127.0.0.1 at 2014
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff" for 127.0.0.1 at 2014-06-13 01:15:08 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-06-13 01:16:00 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap_and_customization.css.scss" for 127.0.0.1 at 2014-06-13 01:16:00 -0400
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff" for 127.0.0.1 at 2014-06-13 01:16:00 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
