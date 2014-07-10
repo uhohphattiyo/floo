@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'spring',        group: :development
+gem 'ransack',             github: 'ernie/ransack'
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 
 group :development, :test do      
 gem 'sqlite3' 
