@@ -2,6 +2,11 @@
 
 <p>
   <strong>Location:</strong>
+	<%= image_tag @place.image.url(:medium) %>
+</p>
+
+<p>
+  <strong>Location:</strong>
   <%= @place.location_id %>
 </p>
 
@@ -20,5 +25,7 @@
   <%= @place.kind %>
 </p>
 
+<% if @place.admin_user == current_admin_user %>
 <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
+<% end %>
 <%= link_to 'Back', places_path, class: "btn btn-default" %>

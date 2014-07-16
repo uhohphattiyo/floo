@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710013549) do
+ActiveRecord::Schema.define(version: 20140716042036) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -53,7 +53,14 @@ ActiveRecord::Schema.define(version: 20140710013549) do
     t.integer  "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "admin_user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
+
+  add_index "places", ["admin_user_id"], name: "index_places_on_admin_user_id"
 
   create_table "trips", force: true do |t|
     t.string   "description"

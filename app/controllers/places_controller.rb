@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin_user!, except: [:index, :show]
 
- 
   def index
     @places = Place.all
   end
@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
 
   
   def new
-    @place = Place.new
+    @place = current_admin_user.places.build
   end
 
   def edit
@@ -20,7 +20,7 @@ class PlacesController < ApplicationController
 
 
   def create
-    @place = Place.new(place_params)
+    @place = current_admin_user.places.build(place_params)
 
     respond_to do |format|
       if @place.save
@@ -63,6 +63,6 @@ class PlacesController < ApplicationController
 
     
     def place_params
-      params.require(:place).permit(:location_id, :budget_id, :name, :kind)
+      params.require(:place).permit(:location_id, :budget_id, :name, :kind, :description, :image)
     end
 end

@@ -3,30 +3,40 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Location</th>
+      <th colspan="1"></th>
       <th>Budget</th>
+      <th colspan="1"></th>
       <th>Name</th>
+      <th colspan="1"></th>
       <th>Kind</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @places.each do |place| %>
       <tr>
+        <td><%= image_tag place.image.url(:medium) %></td>
         <td><%= place.location_id %></td>
+        <td colspan="1"></td>
         <td><%= place.budget_id %></td>
+        <td colspan="1"></td>
         <td><%= place.name %></td>
+        <td colspan="1"></td>
         <td><%= place.kind %></td>
+        <td colspan="1"></td>
         <td><%= link_to 'Show', place %></td>
+       <% if place.admin_user == current_admin_user %>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if admin_user_signed_in? %>
 <%= link_to 'New Place', new_place_path, class: "btn btn-default" %>
-
+<% end %>

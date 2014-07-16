@@ -16,7 +16,7 @@ gem 'devise'
 gem 'spring',        group: :development
 gem 'ransack',             github: 'ernie/ransack'
 gem 'activeadmin', github: 'gregbell/active_admin'
-
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 group :development, :test do      
 gem 'sqlite3' 
