@@ -5,17 +5,17 @@
 
 $font-family-sans-serif: 'Raleway', 'Helvetica';
 
-$body-bg: Black;
+
 
 .home-title {
 	font-family: 'Lobster Two', cursive;
-	color: #CC29A3;
+	color: #33CCFF;
 
 }
 
 // Jumbotron 
-$jumbotron-bg: Black;
-$jumbotron-color: #FF66CC;
+$jumbotron-bg: White;
+$jumbotron-color: #33CCFF;
 
 .jumbotron {	
 	text-align: Center;	
@@ -23,12 +23,13 @@ $jumbotron-color: #FF66CC;
 
 //buttons
 
-$btn-default-color: White;
-$btn-default-border: White;
-$btn-default-bg: Black;
+$btn-default-color: Black;
+$btn-default-border: Black;
+
 
 .btn {
 	margin: 10px;
+	background-color: Transparent;
 }
 
 // Navbar
@@ -43,17 +44,18 @@ $navbar-inverse-bg: Black;
 //registration
 
 
-$input-color: Black !important;
-$panel-bg: Black;
-$panel-default-text: White;
-$panel-default-heading-bg: Black;
-$panel-footer-bg: Black;
+$input-color: Black;
+$panel-bg: White;
+$panel-default-text: Black;
+$panel-default-heading-bg: White;
+$panel-footer-bg: White;
 $input-color-placeholder: Red;
-$pandel-default-border: Black;
+$panel-default-border: White;
 
 
 .btn {
 	margin: 5px, 5px, 5px, 5px;
+	background-color: Transparent;
 }
 
 .form-group {
@@ -61,7 +63,7 @@ $pandel-default-border: Black;
 }
 
 .label-color {
-	color: White;
+	color: Black;
 }
 
 .second-label {
@@ -73,8 +75,26 @@ i {
 }
 
  h2, h3, p {
-	color: White !important;
+	color: Black;
 }
+
+// carousel
+.main-text
+{
+    position: absolute;
+    top: 80px;
+    width: 96.66666666666666%;
+    text-color: #33CCFF;
+}
+
+$table-cell-padding: 15px; 
+$table-cell-margin: 10px;
+
+th, td {
+	padding: 5px;
+	margin: 5px;
+}
+
 
 
 

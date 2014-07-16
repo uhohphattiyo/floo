@@ -1,10 +1,51 @@
 
+<div class="home">
 <link rel="stylesheet" href="assets/bootstrap_and_customization.css.scss">
 
-<div class="jumbotron center">
-     <h1 class="home-title">Where to?</h1>
-     <% if user_signed_in? %>
-          # do something
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="http://s3.amazonaws.com/fatima-pinteresting/pins/images/000/000/026/medium/IMG_5489.JPG?1401852745" alt="First slide">
+                        <div class="carousel-caption">
+                            <h3>Fog</h3>
+                          
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://s3.amazonaws.com/fatima-pinteresting/pins/images/000/000/028/medium/IMG_1540.JPG?1401852865" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h3>tree</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://s3.amazonaws.com/fatima-pinteresting/pins/images/000/000/020/medium/IMG_4276.JPG?1401852477" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h3>hawaii</h3>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
+                        href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                        </span></a>
+            </div>
+            <div class="main-text hidden-xs">
+                <div class="col-md-12 text-center">
+                    <h1>
+                       <h1 class="home-title">Thirsty?</h1>
+                    <h3>
+                         <% if user_signed_in? %>
+          Take a sip.  
      <% else %>
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
@@ -12,6 +53,20 @@
        </p>
 
   <% end %>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="push">
+</div>
+
+<div class="jumbotron center">
+     
+    
 
 
+</div>
 </div>

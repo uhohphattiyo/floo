@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :places
 
-  resources :trips
 
   devise_for :users
   root "pages#home"
