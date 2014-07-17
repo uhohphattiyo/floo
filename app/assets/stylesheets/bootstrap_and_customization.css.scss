@@ -69,6 +69,10 @@ $panel-default-border: White;
 	color: Black;
 }
 
+.form-inline label {
+	font-weight: Bold;
+}
+
 .second-label {
 	color: #9CD4D4;
 }
@@ -85,10 +89,15 @@ i {
 .main-text
 {
     position: absolute;
+    left: 230px;
     top: 50px;
-    width: 96.66666666666666%;
+    width: 60%;
+    height: 150px;
     text-color: #33CCFF;
+    background-color: rgba(225, 225, 225, .4);
 }
+
+
 
 $table-cell-padding: 15px; 
 $table-cell-margin: 10px;
@@ -97,7 +106,9 @@ th, td {
 	padding: 5px;
 	margin: 5px;
 }
-
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
 
 
 
