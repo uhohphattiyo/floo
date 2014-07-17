@@ -18,19 +18,23 @@
 
   <div class="form-group">
     <%= f.label :location_id %><br>
-    <%= f.number_field :location_id, class: "form-control" %>
+    <%= f.select :location_id, [['Houston','0'],['San Francisco','1'],['Santiago','2']], class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :budget_id %><br>
-    <%= f.number_field :budget_id, class: "form-control" %>
+    <%= f.select :budget_id, [['$','0'],['$$','1'],['$$$','2']], class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>
   </div>
+   <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
   <div class="form-group">
     <%= f.label :kind %><br>
-    <%= f.number_field :kind, class: "form-control" %>
+      <%= f.select :kind, [['beer','0'],['chocolate','1'],['cocktail','2'],['coffee','3'],['wine','4']], class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-default" %>
