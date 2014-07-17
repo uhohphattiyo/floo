@@ -17,6 +17,7 @@ gem 'spring',        group: :development
 gem 'ransack',             github: 'ernie/ransack'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'aws-sdk', '~> 1.20.0'
 
 group :development, :test do      
 gem 'sqlite3' 
