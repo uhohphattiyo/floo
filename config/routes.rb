@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :places
-
+  get "admin" => "pages#admin"
 
   devise_for :users
   root "pages#home"
