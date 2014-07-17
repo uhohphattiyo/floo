@@ -44,15 +44,53 @@
                     <h1>
                        <h1 class="home-title">Thirsty?</h1>
                     <h3>
-                         <% if user_signed_in? %>
-          Take a sip.  
-     <% else %>
-       <p>
-         <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
-       </p>
+                    
 
-  <% end %>
+                <form class="form-inline" role="form" action="/places">
+                 
+                     <div class="form-group">
+                       <label>Drink</label>
+                        <select class="form-control">
+                          <option>beer</option>
+                          <option>chocolate</option>
+                          <option>cocktail</option>
+                          <option>coffee</option>
+                          <option>tea</option>
+                          <option>wine</option>
+                        </select>
+                      </div>
+
+
+                      <div class="form-group">
+                       <label>City</label>
+                        <select class="form-control">
+                          <option>Houston</option>
+                          <option>San Francisco</option>
+                          <option>Santiago</option>
+                        </select>
+                      </div>
+                        
+                  <button type="submit" class="btn btn-default">Search</button>
+                </form>
+
+
+
+
+                        <!-- <input type="text" name="kind" value="1"/> -->
+                       
+
+                        <!-- <input type="submit" name="submit" value="submit"/> -->
+                    
+
+                     <% if user_signed_in? %>
+                        Take a sip.  
+                    <% else %>
+                    <p>
+                        <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+                        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default btn-lg" %>
+                    </p>
+
+                    <% end %>
                     </h3>
                     
                 </div>
@@ -69,4 +107,6 @@
 
 
 </div>
+
+
 </div>

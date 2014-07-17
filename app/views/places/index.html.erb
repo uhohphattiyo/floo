@@ -18,13 +18,13 @@
     <% @places.each do |place| %>
       <tr>
         <td><%= image_tag place.image.url(:medium) %></td>
-        <td><%= place.location_id %></td>
+        <td><%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %></td>
         <td colspan="1"></td>
-        <td><%= place.budget_id %></td>
+        <td><%= ["$", "$$", "$$$"][place.budget_id] %></td>
         <td colspan="1"></td>
         <td><%= place.name %></td>
         <td colspan="1"></td>
-        <td><%= place.kind %></td>
+        <td><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %></td>
         <td colspan="1"></td>
         <td><%= link_to 'Show', place %></td>
        <% if place.admin_user == current_admin_user %>

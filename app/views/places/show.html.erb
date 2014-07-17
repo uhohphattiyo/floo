@@ -7,12 +7,13 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @place.location_id %>
+  <%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%>
 </p>
 
 <p>
   <strong>Budget:</strong>
-  <%= @place.budget_id %>
+  <%= ["$", "$$" ,"$$$"][@place.budget_id]%>
+  
 </p>
 
 <p>
@@ -22,7 +23,7 @@
 
 <p>
   <strong>Kind:</strong>
-  <%= @place.kind %>
+  <%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"][@place.kind]%>
 </p>
 
 <% if @place.admin_user == current_admin_user %>

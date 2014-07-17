@@ -3,7 +3,11 @@ class PlacesController < ApplicationController
   before_action :authenticate_admin_user!, except: [:index, :show]
 
   def index
-    @places = Place.all
+    if params[:kind].nil? or params[:location].nil?
+      @places = Place.all
+    else
+      @places = Place.where(kind: params[:kind], location: params[:location])
+    end
   end
 
 
