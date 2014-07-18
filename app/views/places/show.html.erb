@@ -1,32 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-	<%= image_tag @place.image.url(:medium) %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%>
-</p>
-
-<p>
-  <strong>Budget:</strong>
-  <%= ["$", "$$" ,"$$$"][@place.budget_id]%>
+<%= link_to 'Back', places_path, class: "btn btn-default btn-xs" %>
+<br>
+<br>
+<br>
   
-</p>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-8">
+      <p>
+      	<%= image_tag @place.image.url(:medium) %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @place.name %>
+      </p>
+      
+      <p>
+        <strong>Location:</strong>
+        <%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%>
+      </p>
 
-<p>
-  <strong>Kind:</strong>
-  <%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"][@place.kind]%>
-</p>
+      <p>
+        <strong>Budget:</strong>
+        <%= ["$", "$$" ,"$$$"][@place.budget_id]%>   
+      </p>
 
+      <p>
+        <strong>About:</strong>
+        <%= @place.description %>
+      </p>
+    </div>
+  </div>
 <% if @place.admin_user == current_admin_user %>
 <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
 <% end %>
-<%= link_to 'Back', places_path, class: "btn btn-default" %>
+
