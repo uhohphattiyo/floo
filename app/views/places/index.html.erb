@@ -1,42 +1,17 @@
-<h1>Places</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Location</th>
-      <th colspan="1"></th>
-      <th>Budget</th>
-      <th colspan="1"></th>
-      <th>Name</th>
-      <th colspan="1"></th>
-      <th>Kind</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= image_tag place.image.url(:medium) %></td>
-        <td><%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %></td>
-        <td colspan="1"></td>
-        <td><%= ["$", "$$", "$$$"][place.budget_id] %></td>
-        <td colspan="1"></td>
-        <td><%= place.name %></td>
-        <td colspan="1"></td>
-        <td><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %></td>
-        <td colspan="1"></td>
-        <td><%= link_to 'Show', place %></td>
+<div id="places" class="transitions-enabled">
+<% @places.each do |place| %>     
+    <div class="box">
+        <%= image_tag place.image.url(:medium) %>
+        <%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %>       
+        <%= ["$", "$$", "$$$"][place.budget_id] %>     
+        <%= place.name %>
+        <%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %>
+        <%= link_to 'See More', place %>
        <% if place.admin_user == current_admin_user %>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<% if admin_user_signed_in? %>
-<%= link_to 'New Place', new_place_path, class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_place_path(place) %>
+        <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %>
+    </div>
 <% end %>
+</div>
+

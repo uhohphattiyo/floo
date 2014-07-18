@@ -114,6 +114,9 @@ GEM
     jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.0.2)
+      railties (>= 3.1.0)
+      turbolinks
     jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
@@ -123,6 +126,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.1)
+      rails
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -208,7 +213,9 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   jquery-ui-rails
+  masonry-rails (~> 0.2.0)
   paperclip!
   pg
   rails (= 4.1.1)
