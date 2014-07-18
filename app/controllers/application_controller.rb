@@ -9,10 +9,22 @@ class ApplicationController < ActionController::Base
 
    def configure_permitted_parameters
    	devise_parameter_sanitizer.for(:sign_up) << :name
+   end
+   
+   def configure_permitted_parameters
    	devise_parameter_sanitizer.for(:account_update) << :name
+   end
+   
+   def configure_permitted_parameters
    	devise_parameter_sanitizer.for(:sign_up) << :gender
-	devise_parameter_sanitizer.for(:account_update) << :gender
-   	devise_parameter_sanitizer.for(:sign_up) << :birthdate
-   	devise_parameter_sanitizer.for(:account_update) << :birthdate
+   end
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) << :gender
+   end	
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :birthdate
+   end
+   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) << :birthdate
    end
 end

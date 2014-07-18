@@ -6,23 +6,23 @@
       <%= devise_error_messages! %>
 
        <div><%= f.label :name, :class => "label-color"  %><br />
-      <%= f.text_field :name, autofocus: true %></div>
+       <%= f.text_field :name, class: "form-control", autofocus: true %></div>
 
       <div><%= f.label :email, :class => "label-color"  %><br />
-      <%= f.email_field :email, autofocus: true %></div>
+      <%= f.email_field :email, class: "form-control", autofocus: true %></div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
       <div><%= f.label :password, :class => "label-color"  %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off" %></div>
+        <%= f.password_field :password, class: "form-control", autocomplete: "off" %></div>
 
       <div><%= f.label :password_confirmation, :class => "label-color"  %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %></div>
 
       <div><%= f.label :current_password, :class => "label-color"  %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off" %></div>
+        <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %></div>
   </div>
 
   <div class="col-md-6">
