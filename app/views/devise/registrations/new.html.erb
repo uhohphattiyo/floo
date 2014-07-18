@@ -1,3 +1,4 @@
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h1>Sign up</h1>
@@ -6,6 +7,11 @@
   <div class="panel-body">
 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	  <%= devise_error_messages! %>
+
+	<div class="form-group">
+	  <%= f.label :name, :class => "label-color" %><br />
+	  <%= f.text_field :name, autofocus: true %>
+	</div>
 
 	<div class="form-group">
 	  <%= f.label :email, :class => "label-color" %><br />
@@ -20,6 +26,17 @@
 	<div class="form-group">
   	<%= f.label :password_confirmation, :class => "label-color"  %><br />
     	<%= f.password_field :password_confirmation, autocomplete: "off" %>
+	</div>
+
+	<div class="form-group">
+	  <%= f.label :birthdate, :class => "label-color" %><br />
+	  <%= f.date_select :birthdate, :start_year=>1920, :end_year=>2001 %>
+	</div>
+
+	
+	<div class="form-group">
+	  <%= f.label :gender, :class => "label-color" %><br />
+	  <%= f.select :gender, ['female', 'male', 'other'] %>
 	</div>
 
 	<div class="form-group">

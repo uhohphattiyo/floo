@@ -1,23 +1,41 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :email, :class => "label-color"  %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+       <div><%= f.label :name, :class => "label-color"  %><br />
+      <%= f.text_field :name, autofocus: true %></div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <div><%= f.label :email, :class => "label-color"  %><br />
+      <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password, :class => "label-color"  %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-  <div><%= f.label :password_confirmation, :class => "label-color"  %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+      <div><%= f.label :password, :class => "label-color"  %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password, :class => "label-color"  %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %></div>
+      <div><%= f.label :password_confirmation, :class => "label-color"  %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+      <div><%= f.label :current_password, :class => "label-color"  %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off" %></div>
+  </div>
+
+  <div class="col-md-6">
+      <div class="row">
+     <%= f.label :birthdate, :class => "label-color"  %><br />
+      <%= f.date_select :birthdate, :start_year=>1930, :end_year=>2001 %></div>
+      </div>
+      <p></p>
+      <br>
+      <div class="row"><%= f.label :gender, :class => "label-color"  %><br />
+      <%= f.select :gender, ['female', 'male', 'other'] %>
+      </div>
+</div>
 
   <div><%= f.submit "Update", :class => "btn btn-default" %></div>
 <% end %>
