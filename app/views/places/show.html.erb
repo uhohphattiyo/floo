@@ -21,6 +21,10 @@
         <%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%>
       </p>
 
+       <p>
+        <strong>Address:</strong>
+        <%= @place.address %>
+      </p>
       <p>
         <strong>Budget:</strong>
         <%= ["$", "$$" ,"$$$"][@place.budget_id]%>   
