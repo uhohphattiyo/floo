@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     if params[:kind].nil? or params[:location].nil?
-      @places = Place.all.
+      @places = Place.all
     else
       @places = Place.where(kind: params[:kind], location: params[:location])
     end
