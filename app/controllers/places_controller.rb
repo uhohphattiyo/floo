@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     if params[:kind].nil? or params[:location].nil?
-      @places = Place.all
+      @places = Place.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
     else
       @places = Place.where(kind: params[:kind], location: params[:location])
     end
@@ -67,6 +67,6 @@ class PlacesController < ApplicationController
 
     
     def place_params
-      params.require(:place).permit(:location_id, :budget_id, :name, :kind, :description, :image)
+      params.require(:place).permit(:location_id, :budget_id, :name, :kind, :description, :image, :address)
     end
 end
