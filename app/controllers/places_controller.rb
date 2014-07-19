@@ -4,9 +4,9 @@ class PlacesController < ApplicationController
 
   def index
     if params[:kind].nil? or params[:location].nil?
-      @places = Place.all.order(:name).group(:name).paginate(:page => params[:page])
+      @places = Place.all.
     else
-      @places = Place.where(kind: params[:kind], location: params[:location]).paginate(:page => params[:page])
+      @places = Place.where(kind: params[:kind], location: params[:location])
     end
   end
 
