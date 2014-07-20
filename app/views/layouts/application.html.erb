@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Floo</title>
+  <title>Swille: The Curated Drink Experience</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<%= render 'layouts/header' %>
+<%= render 'layouts/header' %>
 
 	<div class = "container">
 		<% flash.each do |name, msg| %>      
@@ -20,7 +20,7 @@
 		<%= yield %>
 	</div>
 
-
+<%= render 'layouts/footer' %>
 
 </body>
 </html>
