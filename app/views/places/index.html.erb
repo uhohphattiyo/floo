@@ -3,11 +3,17 @@
     <div class="box panel panel-default">
         <%= link_to image_tag(place.image.url(:medium)), place %>
         <div class="panel-body">
-            <%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %>       
+                 
+            <p>
             <!-- <%= ["$", "$$", "$$$"][place.budget_id] %> -->
             <%= place.name %>
+            </p>
+            <p>
             <%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %>
-            
+            </p>
+            <p>
+            <%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %>
+            </p>
            <% if place.admin_user == current_admin_user %>
             <div class="actions">
                 <%= link_to 'Edit', edit_place_path(place) %>

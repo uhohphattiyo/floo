@@ -9,7 +9,7 @@ $font-family-sans-serif: 'Raleway', 'Helvetica';
 
 .home-title {
 	font-family: 'Lobster Two', cursive;
-	color: #33CCFF;
+	color: White;
 
 }
 
@@ -97,6 +97,12 @@ i {
     background-color: rgba(225, 225, 225, .4);
 }
 
+.category_box {
+	width: 40%;
+	height: 150px;
+	float:left;
+	text-align: Center;
+}
 
 
 $table-cell-padding: 15px; 
