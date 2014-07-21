@@ -242,6 +242,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   masonry-rails (~> 0.2.0)
+  omniauth
   omniauth-facebook
   paperclip!
   pg

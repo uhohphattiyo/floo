@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+
+
   resources :places
   get "admin" => "pages#admin"
 
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   root "pages#home"
   get "about" => "pages#about"
   get "privacy" => "pages#privacy"
