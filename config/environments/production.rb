@@ -88,12 +88,25 @@ Rails.application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['AWS_BUCKET'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    :bucket => ENV['floo'],
+    :access_key_id => ENV['AKIAIVOL7AGFTXOYZ6MA'],
+    :secret_access_key => ENV['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']
     }
   }
 
-  
+    #for omniauth facebook auth
+    # Email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: 'someuser',
+    password: 'somepass',
+    authentication => :plain,
+    domain => 'somedomain.com'
+  }
 
 end
