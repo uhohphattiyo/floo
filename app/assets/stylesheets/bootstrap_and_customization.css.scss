@@ -121,6 +121,7 @@ th, td {
 .footer {
 	text-align: center;
 	position: absolute;
+	clear: both;
 	bottom: 0;
 	width: 100%;
 	height: 45px;
@@ -133,10 +134,13 @@ th, td {
 	padding-top: 10px;
 }
 
-html,body{
-    height: 100%;
-    position: relative;
 
-}
+ #wrapper
+  {
+      height: 100%;
+      margin: 0 auto;
+      min-width: 1000px;
+      position: relative;
+  }
 
 @import 'bootstrap';
