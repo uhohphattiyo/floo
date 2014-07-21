@@ -20,7 +20,7 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations.
- ## config.active_record.migration_error = :page_load
+  config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -37,4 +37,19 @@ Rails.application.configure do
 
   # For Devise / Heroku
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  #for omniauth facebook auth
+    # Email
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => config.app_domain }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com', 
+    port: '587',
+    enable_starttls_auto: true,
+    user_name: 'someuser',
+    password: 'somepass',
+    authentication => :plain,
+    domain => 'somedomain.com'
+  }
 end
