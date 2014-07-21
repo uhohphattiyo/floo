@@ -106,7 +106,7 @@ Rails.application.configure do
     user_name: 'someuser',
     password: 'somepass',
     authentication => :plain,
-    domain => 'somedomain.com'
+    domain => 'swille.com'
   }
 
 end
