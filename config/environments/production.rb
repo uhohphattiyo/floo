@@ -98,7 +98,7 @@ Rails.application.configure do
     # Email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => config.swille.com }
+  config.action_mailer.default_url_options = { :host => config.swille }
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com', 
     port: '587',
@@ -106,7 +106,7 @@ Rails.application.configure do
     user_name: 'someuser',
     password: 'somepass',
     authentication => :plain,
-    domain => 'swille.com'
+    domain => 'somedomain.com'
   }
 
 end
