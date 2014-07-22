@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
+      # user.image = auth.info.image # assuming the user model has an image
     end
   end
 
@@ -23,6 +23,15 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+
+ if @user.persisted?
+      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    else
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
+    end
 
 
     
