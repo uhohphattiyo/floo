@@ -11,7 +11,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url
     end
   end
-end
+ end
 
   [:facebook].each do |provider|
     provides_callback_for provider
@@ -24,4 +24,3 @@ end
       finish_signup_path(resource)
     end
   end
-end
