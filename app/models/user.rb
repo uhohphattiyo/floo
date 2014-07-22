@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-   TEMP_EMAIL_PREFIX = 'change@me'
-   TEMP_EMAIL_REGEX = /\Achange@me/
+   ##TEMP_EMAIL_PREFIX = 'change@me'
+   ##TEMP_EMAIL_REGEX = /\Achange@me/
 
 
   # Include default devise modules. Others available are:
@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :confirmable, :omniauth_providers => [:facebook]
 
-    validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+   ## validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
     def self.from_omniauth(auth)
       where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     end
   end
 end
-
+=begin
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
 
@@ -72,7 +72,7 @@ end
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
-
+=end
     
    validates :birthdate, presence: true
    
