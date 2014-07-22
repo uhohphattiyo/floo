@@ -94,18 +94,6 @@ Rails.application.configure do
     }
   }
 
-  # Email for omniauth facebook auth
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => ENV['swille.com'] }
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com', 
-    port: '587',
-    enable_starttls_auto: true,
-    user_name: 'someuser',
-    password: 'somepass',
-    authentication: :plain,
-    domain: 'swille.com'
-  }
+
 
 end

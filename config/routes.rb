@@ -8,18 +8,14 @@ Rails.application.routes.draw do
   resources :places
   get "admin" => "pages#admin"
 
-  devise_for :users, :controllers => {  :registration => 'registration', omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users, :controllers => {  :registration => 'registration', :omniauth_callbacks => 'users/omniauth_callbacks' }
   root "pages#home"
   get "about" => "pages#about"
   get "privacy" => "pages#privacy"
 
-=begin
-  devise_scope :user do
-    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
-=end
 
-  ##  match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  
 
 
 
