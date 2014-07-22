@@ -104,8 +104,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: 'someuser',
     password: 'somepass',
-    authentication => :login,
-    domain => ENV['swille.com']
+    authentication: :plain,
+    domain: 'swille.com'
   }
 
 end
