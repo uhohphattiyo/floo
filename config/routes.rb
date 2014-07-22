@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy"
   
 
+    match '/profile/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
