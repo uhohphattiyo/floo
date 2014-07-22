@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
       end
     end
   end
-end
+
 
     
    validates :birthdate, presence: true
