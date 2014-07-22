@@ -82,7 +82,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # For devise / heroku
-  config.action_mailer.default_url_options = { :host => 'http://swille.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://floo.herokuapp.com/' }
 
   # For Paperclip to upload images to AWS S3 
   config.paperclip_defaults = {
@@ -98,7 +98,7 @@ Rails.application.configure do
     # Email
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
- config.action_mailer.default_url_options = { :host => config.swille }
+ config.action_mailer.default_url_options = { :host => config.swille.com}
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com', 
     port: '587',
