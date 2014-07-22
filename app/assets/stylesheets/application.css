@@ -14,6 +14,6 @@
  *= require bootstrap_and_customization
  *= require_self
  *= require 'masonry/transitions'
- *= require jquery.ui.all
+ *= require jquery-ui
  *= require places
  */
