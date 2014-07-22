@@ -93,7 +93,7 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-
+=begin
   # Email for omniauth facebook auth
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -104,8 +104,8 @@ Rails.application.configure do
     enable_starttls_auto: true,
     user_name: 'someuser',
     password: 'somepass',
-    authentication => :plain,
+    authentication => :login,
     domain => ENV['swille.com']
   }
-
+=end
 end
