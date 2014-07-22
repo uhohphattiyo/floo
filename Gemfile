@@ -24,7 +24,7 @@ gem 'will_paginate', '3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'kaminari'
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 1.6.0'
 
 
 group :development, :test do      
