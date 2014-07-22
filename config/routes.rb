@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :places
   get "admin" => "pages#admin"
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  devise_for :users, :controllers => {  :registration => 'registration', omniauth_callbacks: 'omniauth_callbacks' }
   root "pages#home"
   get "about" => "pages#about"
   get "privacy" => "pages#privacy"
