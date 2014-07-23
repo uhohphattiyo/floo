@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-
+ attr_accessible :email, :password, :password_confirmation, :remember_me, :provider, :uid, :oauth_token, :oauth_expires_at
+ 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
@@ -23,7 +24,18 @@ class User < ActiveRecord::Base
     end
   end
 
+def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+  unless user
+    user = User.create(
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password:Devise.friendly_token[0,20]
+                         )
 
+  end
+end
 
    
 
