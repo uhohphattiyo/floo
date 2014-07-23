@@ -42,7 +42,7 @@ end
 
 
     
-   validates :birthdate, presence: true
+   
    
    
    ## validates :name, presence: true - fix bug - showing name as blank in form
