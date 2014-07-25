@@ -16,6 +16,9 @@
       <li> <% if admin_user_signed_in? %>
         <%= link_to 'New Place', new_place_path %>
           <% end %></li>
+      <li> <% if admin_user_signed_in? %>
+        <%= link_to 'New City', new_city_path %>
+          <% end %></li>
       <li><%= link_to "Home", root_path %></li>
       
       <% if user_signed_in? %>
