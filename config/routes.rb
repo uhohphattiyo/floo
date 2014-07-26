@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 
   devise_for :users, 
   :controllers => {  :registration => 'registration', :omniauth_callbacks => 'users/omniauth_callbacks' }
-  root "pages#home"
+  root "cities#index"
   get "about" => "pages#about"
   get "privacy" => "pages#privacy"
 
 
+ 
 
   
 
