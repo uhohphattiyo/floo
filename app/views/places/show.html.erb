@@ -4,38 +4,45 @@
 <br>
 <br>
 <br>
+
+<div itemscope itemtype="http://schema.org/FoodEstablishment">
   
   <div class="row">
     <div class="col-md-offset-3 col-md-8">
       <p>
-      	<%= image_tag @place.image.url(:medium) %>
+      	<span itemprop="photo"><%= image_tag @place.image.url(:medium) %></span>
       </p>
 
       <p>
         <strong>Name:</strong>
-        <%= @place.name %>
+        <span itemprop="name"> <%= @place.name %> </span>
       </p>
       
+      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
       <p>
         <strong>Location:</strong>
-        <%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%>
+        <span itemprop="addressLocality"><%= ["Houston", "San Francisco", "Santiago"][@place.location_id]%></span>
       </p>
 
-       <p>
+       <p> 
         <strong>Address:</strong>
-        <%= @place.address %>
+        <span itemprop="streetAddress"><%= @place.address %></span>
       </p>
+
+    </div>
       <p>
         <strong>Budget:</strong>
-        <%= ["$", "$$" ,"$$$"][@place.budget_id]%>   
+        <span itemprop="priceRange"><%= ["$", "$$" ,"$$$"][@place.budget_id]%></span>   
       </p>
 
       <p>
         <strong>About:</strong>
-        <%= @place.description %>
+        <span itemprop="review"><%= @place.description %></span>
       </p>
     </div>
   </div>
+
+</div>
 <% if @place.admin_user == current_admin_user %>
 <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
 <% end %>

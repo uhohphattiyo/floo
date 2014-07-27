@@ -5,11 +5,13 @@
 <br>
 <br>
 <br>
-  
+<div itemscope itemtype="http://schema.org/FoodEstablishment">  
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
   <div class="row">
     <div class="col-md-offset-3 col-md-8">
       <p>
-      	<%= image_tag @city.image.url(:medium) %>
+      	<span itemprop="addressLocality"><%= image_tag @city.image.url(:medium) %></span>
       </p>
       
     </div>
@@ -17,5 +19,5 @@
 <% if @city.admin_user == current_admin_user %>
 <%= link_to 'Edit', edit_city_path(@city), class: "btn btn-default" %> 
 <% end %>
-
-
+</div>
+</div>
