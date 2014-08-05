@@ -37,6 +37,18 @@
     <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :food %><br>
+    <%= f.text_field :food, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dress %><br>
+    <%= f.text_field :dress, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :website %><br>
+    <%= f.text_field :website, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :kind %><br>
       <%= f.select :kind, [['beer','0'],['chocolate','1'],['cocktail','2'],['coffee','3'], ['tea','4'], ['wine','5']], class: "form-control" %>
   </div>
