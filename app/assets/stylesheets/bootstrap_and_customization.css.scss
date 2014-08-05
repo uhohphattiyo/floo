@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
@@ -9,16 +9,16 @@ $font-family-sans-serif: 'Raleway', 'Helvetica';
 
 .home-title {
 	font-family: 'Lobster Two', cursive;
-	color: White;
-
+	color: Black;
+	font-size: 80px;
 }
 
-// Jumbotron 
-$jumbotron-bg: White;
-$jumbotron-color: #33CCFF;
 
-.jumbotron {	
-	text-align: Center;	
+
+.blackout {
+	height: 100%;
+	width: 100%;
+	background-color: Black;
 }
 
 // dropdown
@@ -51,7 +51,7 @@ $input-color: Black;
 $panel-bg: White;
 $panel-default-text: Black;
 $panel-default-heading-bg: White;
-$panel-footer-bg: White;
+
 $input-color-placeholder: Red;
 $panel-default-border: White;
 
@@ -85,6 +85,13 @@ i {
 	color: Black;
 }
 
+//cities
+#places {
+	height: 100%;
+	width: 60%;
+}
+
+
 // carousel
 .main-text
 {
@@ -93,8 +100,8 @@ i {
     top: 50px;
     width: 60%;
     height: 150px;
-    text-color: #33CCFF;
-    background-color: rgba(225, 225, 225, .4);
+    text-color: Black; 
+   /* background-color: rgba(225, 225, 225, .4); */
 }
 
 .box {
@@ -125,14 +132,34 @@ th, td {
     margin: 0 auto;
 }
 
+
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
 .footer {
-	text-align: center;
-	position: absolute;
-	clear: both;
-	bottom: 0;
+  position: relative;
+  bottom: -10;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  clear: both;
+  background-color: rgba(225, 225, 225, .4);
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+.rowpadding {
 	width: 100%;
-	height: 45px;
-	background-color: rgba(225, 225, 225, .4);
+	height: 50px;
 }
 
 
@@ -140,13 +167,5 @@ th, td {
 	padding-top: 10px;
 }
 
-
- #wrapper
-  {
-      height: 100%;
-      margin: 0 auto;
-      min-width: 1000px;
-      position: relative;
-  }
 
 @import 'bootstrap';
