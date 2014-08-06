@@ -119,6 +119,10 @@ i {
 	width: 100%;
 }
 
+.box img:hover {
+   transform: scale(1.05);
+}
+
 .category_box {
 	width: 40%;
 	height: 150px;
