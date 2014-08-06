@@ -3,8 +3,8 @@
 <% @places.each do |place| %>     
     <div class="box panel panel-default">
         <span itemprop="photo"><%= link_to image_tag(place.image.url(:medium)), place %></span>
-        <div class="panel-body">
-                 
+        
+        <div class="panel-body text-center">                 
             <p>
             <!-- <%= ["$", "$$", "$$$"][place.budget_id] %> -->
             <span itemprop="name"><%= place.name %></span>
@@ -12,11 +12,7 @@
             <p>
             <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %></span>
             </p>
-            <p>
-            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"
-            <span itemprop="addressLocality"><%= ["Houston", "San Francisco", "Santiago"] [place.location_id] %></span>
-            </div>
-            </p>
+            
            <% if place.admin_user == current_admin_user %>
             <div class="actions">
                 <%= link_to 'Edit', edit_place_path(place) %>
@@ -24,6 +20,8 @@
             </div>
             <% end %>
         </div>
+
+
     </div>
 <% end %>
 </div>

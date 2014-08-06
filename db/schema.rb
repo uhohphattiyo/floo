@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805210239) do
+ActiveRecord::Schema.define(version: 20140806050548) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20140805210239) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "admin_user_id"
+    t.string   "name"
+    t.integer  "location_id"
   end
 
   add_index "cities", ["admin_user_id"], name: "index_cities_on_admin_user_id"

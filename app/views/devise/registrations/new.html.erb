@@ -33,12 +33,14 @@
 	
 	<div class="form-group">
   	<%= f.label :password_confirmation, :class => "label-color"  %><br />
-    	<%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
 	</div>
 
 	<div class="form-group">
 	  <%= f.label :birthdate, :class => "label-color" %><br />
 	  <%= f.date_select :birthdate, :start_year=>1920, :end_year=>2001 %>
+	  <p>You must be over 13 years old to sign up.  </p>
+      <p>You agree you are of legal drinking age in your country if you access any alcohol related portions.</p>
 	</div>
 
 	
