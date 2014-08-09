@@ -8,8 +8,13 @@ class CitiesController < InheritedResources::Base
 
 
   def show
+     ##  for each city
+     ##  if city[:location_id] == place[:location_id]
+     ##      render Place.find(:conditions => ["location_id = ? == location_id = ?", city, place])
+     ##
   end
 
+  
   
   def new
     @city = current_admin_user.cities.build
@@ -63,7 +68,7 @@ class CitiesController < InheritedResources::Base
 
     
     def city_params
-      params.require(:city).permit(:image)
+      params.require(:city).permit(:image, :location_id, :name)
     end
 
 

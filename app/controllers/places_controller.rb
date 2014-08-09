@@ -3,11 +3,12 @@ class PlacesController < ApplicationController
   before_action :authenticate_admin_user!, except: [:index, :show]
 
   def index
-    if params[:kind].nil? or params[:location].nil?
-      @places = Place.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
-    else
-      @places = Place.where(kind: params[:kind], location: params[:location])
-    end
+      @places = Place.search(params[:kind], params[:location_id])
+
+  end
+
+  def search
+
   end
 
 

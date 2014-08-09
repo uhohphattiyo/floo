@@ -11,4 +11,10 @@ class Place < ActiveRecord::Base
 	validates :image, presence: true
 	validates :description, presence: true
 	validates :address, presence: true
+
+
+def self.search(kind, location_id)
+  return scoped unless kind.present? || location_id.present?
+  where(['kind LIKE ? AND location_id = ?', kind, location_id])
+end
 end

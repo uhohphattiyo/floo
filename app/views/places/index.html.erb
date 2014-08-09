@@ -1,5 +1,8 @@
 <div itemscope itemtype="http://schema.org/FoodEstablishment">
 <div id="places" class="transitions-enabled">
+
+
+
 <% @places.each do |place| %>     
     <div class="box panel panel-default">
         <span itemprop="photo"><%= link_to image_tag(place.image.url(:medium)), place %></span>

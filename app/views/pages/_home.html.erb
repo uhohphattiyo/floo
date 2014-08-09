@@ -2,45 +2,36 @@
   <link rel="stylesheet" href="assets/bootstrap_and_customization.css.scss">    
                 <div class="col-md-12"
                 <div class="main-text hidden-xs text-center">
-                  
+              
                            <h1 class="home-title">Select Your Sip</h1>
                         
+                          <%= form_tag places_path, :method => 'get' do %>
                             <form class="form-inline text-center" role="form" action="/places">
                              
                                  <div class="form-group">
-                                    <label>Drink</label>
-                                      <select class="form-control">
-                                        <option>beer</option>
-                                        <option>chocolate</option>
-                                        <option>cocktail</option>
-                                        <option>coffee</option>
-                                        <option>juice</option>
-                                        <option>tea</option>
-                                        <option>wine</option>
-                                      </select>
+                                    <%= label_tag :kind %><br>
+                                      <%= select_tag :kind, options_for_select([['beer','0'],['chocolate','1'],['cocktail','2'],['coffee','3'], ['tea','4'], ['wine','5'], ['juice','6']]), class: "form-control" %>
                                   </div>
 
                                   <br>
 
 
                                   <div class="form-group">
-                                    <label>City</label>
-                                      <select class="form-control">
-                                        <option>Houston</option>
-                                        <option>Rio de Janeiro</option>
-                                        <option>San Francisco</option>
-                                        <option>Santiago</option>
-                                        <option>Valparaíso</option>
-                                    </select>
+                                    <%= label_tag :location_id %><br>
+                                      <%= select_tag :location_id, options_for_select([['Houston','0'],['San Francisco','1'],['Santiago','2'], ['Valparaiso','3'], ['Rio de Janeiro','4'], ['Milan','5'], ['Palo Alto','6'], ['Las Vegas','7'], ['New York','8'], ['San Diego','9']]), class: "form-control" %>
                                   </div>
                                   <br>
                                   <br>
-                              <span itemprop="significantLink"><button type="submit" class="btn btn-default">Search</button></span>
+                                  <div class="actions">
+                                  <span itemprop="significantLink">
+                                  <%= submit_tag 'Search', :name => nil, class: "btn btn-default" %></span>
+                                </div>
                           </form>
+                            <% end %>
                   </div>
                 </div>
 
-
+              
 
 </div>
 
