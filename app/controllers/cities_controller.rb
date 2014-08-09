@@ -10,8 +10,10 @@ class CitiesController < InheritedResources::Base
   def show
      ##  for each city
      ##  if city[:location_id] == place[:location_id]
-     ##      render Place.find(:conditions => ["location_id = ? == location_id = ?", city, place])
-     ##
+     ##      render Place.where(:conditions => ["location_id = ? == location_id = ?", city, place])
+     
+     @places = @city.places
+    
   end
 
   

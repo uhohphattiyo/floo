@@ -5,7 +5,8 @@ ActiveAdmin.register Place do
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # permit_params :list, :of, :attributes, :on, :model
-  #
+  # 
+  # permit_params :city_id
   # or
   #
   # permit_params do
@@ -14,4 +15,9 @@ ActiveAdmin.register Place do
   #  permitted
   # end
   
+  controller do
+    def permitted_params
+      params.permit place: [ :city_id, :description, :image_file_name, :image_content_type, :image_file_size, :name, :kind, :address, :website, :dress, :food, ":image_updated_at(1i)", ":image_updated_at(2i)", ":image_updated_at(3i)", ":image_updated_at(4i)", ":image_updated_at(5i)"  ]
+    end
+  end
 end
