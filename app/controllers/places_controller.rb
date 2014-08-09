@@ -3,8 +3,10 @@ class PlacesController < ApplicationController
   before_action :authenticate_admin_user!, except: [:index, :show]
 
   def index
-      @places = Place.search(params[:kind], params[:location_id])
-
+        @places = Place.all 
+        unless      
+        @places = Place.search(params[:kind], params[:location_id])
+        end
   end
 
   def search
