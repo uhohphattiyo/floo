@@ -8,19 +8,19 @@
                           <%= form_tag places_path, :method => 'get' do %>
                             <form class="form-inline text-center" role="form" action="/places">
                              
-                                 <div class="form-group">
-                                    <%= label_tag :kind %><br>
+                                 <div class="form-group text-center">
+                                    <h4><%= label_tag :kind %></h4>
                                       <%= select_tag :kind, options_for_select([['beer','0'],['chocolate','1'],['cocktail','2'],['coffee','3'], ['tea','4'], ['wine','5'], ['juice','6']]), class: "form-control" %>
                                   </div>
 
-                                  <br>
+                         
 
 
-                                  <div class="form-group">
-                                    <%= label_tag :location_id %><br>
+                                  <div class="form-group text-center">
+                                    <h4><%= label_tag :location_id %></h4>
                                       <%= select_tag :location_id, options_for_select([['Houston','0'],['San Francisco','1'],['Santiago','2'], ['Valparaiso','3'], ['Rio de Janeiro','4'], ['Milan','5'], ['Palo Alto','6'], ['Las Vegas','7'], ['New York','8'], ['San Diego','9']]), class: "form-control" %>
                                   </div>
-                                  <br>
+                             
                                   <br>
                                   <div class="actions text-center">
                                   <span itemprop="significantLink">
