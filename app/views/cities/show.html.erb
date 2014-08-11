@@ -5,52 +5,47 @@
 <br>
 <br>
 <br>
-<div itemscope itemtype="http://schema.org/FoodEstablishment">  
-  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 
-  <div class="row">
-    <div class="col-md-offset-3 col-md-8">
-      <p>
-      	<span itemprop="addressLocality"><%= image_tag @city.image.url(:medium) %></span>
-      </p>
-
-
-
-
+<div class="row">
+    <div itemscope itemtype="http://schema.org/FoodEstablishment">  
+       <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <h1 class="home-title">
+      	     <span itemprop="addressLocality"><%= @city.name %></span>
+            </h1>   
+      </div>
     </div>
-  </div>
+
 <% if @city.admin_user == current_admin_user %>
-<%= link_to 'Edit', edit_city_path(@city), class: "btn btn-default" %> 
+  <%= link_to 'Edit', edit_city_path(@city), class: "btn btn-default" %>
 <% end %>
 </div>
-</div>
-
-
 
 
 <% @places.each do |place| %>     
+  <div class="col-md-3">
     <div class="box panel panel-default">
-        <span itemprop="photo"><%= link_to image_tag(place.image.url(:medium)), place %></span>
-        
-        <div class="panel-body text-center">                 
-            <p>
-            <!-- <%= ["$", "$$", "$$$"][place.budget_id] %> -->
-            <span itemprop="name"><%= place.name %></span>
-            </p>
-            <p>
-            <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %></span>
-            </p>
-            
-           <% if place.admin_user == current_admin_user %>
-            <div class="actions">
-                <%= link_to 'Edit', edit_place_path(place) %>
-                <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-            <% end %>
-        </div>
-
-
-    </div>
-
-
+        <span itemprop="photo">
+            <%= link_to image_tag(place.image.url(:medium)), place %>
+        </span>
+    
+      <div class="panel-body text-center">                 
+        <p>
+          <span itemprop="name">
+              <%= place.name %>
+          </span>
+        </p>
+        <p>
+          <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %>
+          </span>
+        </p>
+      </div>      
+  <% if place.admin_user == current_admin_user %>
+      <div class="actions">
+         <%= link_to 'Edit', edit_place_path(place) %>
+         <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  <% end %>
+     </div>     
+</div>
 <% end %>
+    
