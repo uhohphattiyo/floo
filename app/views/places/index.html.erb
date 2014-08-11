@@ -13,7 +13,7 @@
             <span itemprop="name"><%= place.name %></span>
             </p>
             <p>
-            <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine"] [place.kind] %></span>
+            <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine", "juice"] [place.kind] %></span>
             </p>
             
            <% if place.admin_user == current_admin_user %>
