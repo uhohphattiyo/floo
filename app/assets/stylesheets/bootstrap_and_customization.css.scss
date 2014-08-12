@@ -14,7 +14,19 @@ $font-family-sans-serif: 'Raleway', 'Helvetica';
 	text-align: Center;
 }
 
+#image-wrapper .image-text {
+position:relative;
+bottom:40px;
+left:0px;
+width: 100%;
+visibility:hidden;
+color: Black;
+background: rgba(225, 225, 225, .7);
+}
 
+#image-wrapper:hover .image-text {
+visibility:visible;
+}
 
 .blackout {
 	height: 100%;
