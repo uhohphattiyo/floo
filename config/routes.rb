@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy"
 
 
- 
+mount Monologue::Engine, at: '/blog'
 
   
 
