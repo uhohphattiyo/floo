@@ -21,4 +21,11 @@ module Floo
     # config.i18n.default_locale = :de
     # config.assets.initialize_on_precompile = false
   end
+
+
+
+
+Rails.application.config.assets.precompile += %w( monologue/foundation_icons/social_foundicons.eot )
+Rails.application.config.assets.precompile += %w( monologue/foundation_icons/social_foundicons.woff )
+Rails.application.config.assets.precompile += %w( monologue/foundation_icons/social_foundicons.ttf )
 end
