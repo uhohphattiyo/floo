@@ -41,9 +41,7 @@
             </span>
           </p>
                    
-         
-          
-    
+
   <% if place.admin_user == current_admin_user %>
       <div class="actions">
          <%= link_to 'Edit', edit_place_path(place) %>
@@ -60,3 +58,5 @@
 <div class="center">
    <%= will_paginate @places, renderer: BootstrapPagination::Rails %>
 </div>
+
+
