@@ -3,7 +3,7 @@ class CitiesController < InheritedResources::Base
   before_action :authenticate_admin_user!, except: [:index, :show]
 
  def index
-    @cities = City.all
+    @cities = City.all.paginate(:page => params[:page], :per_page => 16)
  end
 
 
@@ -12,7 +12,7 @@ class CitiesController < InheritedResources::Base
      ##  if city[:location_id] == place[:location_id]
      ##      render Place.where(:conditions => ["location_id = ? == location_id = ?", city, place])
      
-     @places = @city.places
+     @places = @city.places.paginate(:page => params[:page], :per_page => 16)
     
   end
 

@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   def index
         @places = Place.all 
         unless      
-        @places = Place.search(params[:kind], params[:location_id])
+        @places = Place.search(params[:kind], params[:location_id]).paginate(:page => params[:page], :per_page => 16)
         end
   end
 
