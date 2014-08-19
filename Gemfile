@@ -25,6 +25,7 @@ gem 'will_paginate-bootstrap'
 gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.6.0'
+gem "geocoder"
 
 
 
