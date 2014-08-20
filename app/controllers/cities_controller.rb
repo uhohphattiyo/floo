@@ -4,6 +4,8 @@ class CitiesController < InheritedResources::Base
 
  def index
     @cities = City.all.paginate(:page => params[:page], :per_page => 16)
+ 
+
  end
 
 

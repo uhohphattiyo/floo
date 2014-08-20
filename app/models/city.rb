@@ -8,5 +8,8 @@ class City < ActiveRecord::Base
 
 	validates :image, presence: true
 
+
+ 	
+    
 	
 end
