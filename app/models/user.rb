@@ -1,12 +1,17 @@
 class User < ActiveRecord::Base
 
- 
 
+#Relationships
+  
+  #Favorites
+  
+
+ #Devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
    
-
+#Omniauth Authentication
     def self.from_omniauth(auth)
       where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.email = auth.info.email
@@ -35,17 +40,10 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
                          )
 
   end
+
 end
 
    
-
-
-
-    
-   
-   
-   
-   ## validates :name, presence: true - fix bug - showing name as blank in form
 
   
 end

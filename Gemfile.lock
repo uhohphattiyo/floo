@@ -1,13 +1,12 @@
 GIT
-  remote: git://github.com/ernie/ransack.git
-  revision: 66c9e3c721244aa900e7be6e4091b1ee0f9dd8f3
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: dca87ec5d8038b2d436a75ad6119c8eb67b73e70
   specs:
-    ransack (1.2.3)
-      actionpack (>= 3.0)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      i18n
-      polyamorous (~> 1.1.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
@@ -27,14 +26,15 @@ GIT
       sass-rails
 
 GIT
-  remote: git://github.com/thoughtbot/paperclip.git
-  revision: dca87ec5d8038b2d436a75ad6119c8eb67b73e70
+  remote: git://github.com/ernie/ransack.git
+  revision: 66c9e3c721244aa900e7be6e4091b1ee0f9dd8f3
   specs:
-    paperclip (4.2.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
+    ransack (1.2.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.1.0)
 
 GEM
   remote: https://rubygems.org/
