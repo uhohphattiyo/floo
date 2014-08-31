@@ -4,8 +4,9 @@ class User < ActiveRecord::Base
 #Relationships
   
   #Favorites
+ has_many :favorites
+  has_many :favorite_places, through: :favorites, source: :favorited, source_type: 'Place'
   
-
  #Devise
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]

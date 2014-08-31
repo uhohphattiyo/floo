@@ -5,7 +5,8 @@ class Place < ActiveRecord::Base
 	belongs_to :city
 
 	#Favorites
-
+	has_many :favorite_places
+	has_many :favorited_by, through: :favorite_places, source: :user
 
 
 #Valdiations

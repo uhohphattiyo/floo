@@ -73,8 +73,24 @@
 <% end %>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x250&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
 
- 
+ <br>
+ <br>
+ <br>
+ <br>
+ <p class="text-center">
+ <% if current_user %>
+  <%- unless current_user.favorite_places.exists?(id: @place.id) -%>
+  <%= link_to favorite_places_path(place_id: @place), method: :post do %>
+    <span title="Favorite this Place"><i class="glyphicon glyphicon-heart-empty"></i></span>
+  <% end %>
+  <%- else -%>
+  <%= link_to favorite_place_path(@place), :onMouseover =>"Un-favorite", method: :delete do %>
+  <span title="Un-Favorite this Place"><i class="glyphicon glyphicon-heart"></i></span>
+  <% end %>
 
+  <%- end -%>
+<% end %>
+</p>
 
  </div>
 

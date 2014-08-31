@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy"
 
 
-
+#favorites
+  resources :favorite_places, only: [:create, :destroy]
 
 
 
