@@ -2,6 +2,11 @@ class FavoritePlacesController < ApplicationController
 
  before_action :set_place
   
+ def index
+   
+end
+
+
   def create
     if Favorite.create(favorited: @place, user: current_user)
       redirect_to @place, notice: 'Place has been favorited'

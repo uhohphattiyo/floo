@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', root_path, class: "btn btn-default btn-xs" %>
+<%= link_to 'Back', :back, class: "btn btn-default btn-xs" %>
 <br>
 <br>
 <br>
@@ -84,7 +84,7 @@
     <span title="Favorite this Place"><i class="glyphicon glyphicon-heart-empty"></i></span>
   <% end %>
   <%- else -%>
-  <%= link_to favorite_place_path(@place), :onMouseover =>"Un-favorite", method: :delete do %>
+  <%= link_to favorite_place_path(@place), method: :delete do %>
   <span title="Un-Favorite this Place"><i class="glyphicon glyphicon-heart"></i></span>
   <% end %>
 
