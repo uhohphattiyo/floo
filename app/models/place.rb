@@ -5,9 +5,9 @@ class Place < ActiveRecord::Base
 	belongs_to :city
 
 	#Favorites
-	has_many :favorite_places
-	has_many :favorited_by, through: :favorite_places, source: :user
 
+
+	
 
 #Valdiations
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }

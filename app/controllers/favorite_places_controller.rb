@@ -1,10 +1,11 @@
 class FavoritePlacesController < ApplicationController
 
- before_action :set_place
+ before_action :set_place,  except: [:index]
+ before_action :authenticate_user!
   
  def index
-   
-end
+  @places = current_user.favorite_places
+ end
 
 
   def create
@@ -19,12 +20,17 @@ end
     Favorite.where(favorited_id: @place.id, user_id: current_user.id).first.destroy
     redirect_to @place, notice: 'Place is no longer a favorite'
   end
+
+
   
   private
   
+
+
   def set_place
     @place = Place.find(params[:place_id] || params[:id])
   end
+
 
 
 end

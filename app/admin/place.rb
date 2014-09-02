@@ -15,9 +15,14 @@ ActiveAdmin.register Place do
   #  permitted
   # end
   
+  
+
   controller do
     def permitted_params
       params.permit place: [ :city_id, :description, :image_file_name, :image_content_type, :image_file_size, :name, :kind, :address, :latitude, :longitude, :website, :dress, :food, ":image_updated_at(1i)", ":image_updated_at(2i)", ":image_updated_at(3i)", ":image_updated_at(4i)", ":image_updated_at(5i)" ]
     end
   end
+
+
+
 end

@@ -1,9 +1,7 @@
-<div itemscope itemtype="http://schema.org/FoodEstablishment">
-<div id="places" class="transitions-enabled">
 
 
 
-<% @favoriteplaces.each do |favoriteplace| %>     
+ <% @places.each do |place| %>     
     <div class="box panel panel-default">
         <div id="image-wrapper">
         <span itemprop="photo"><%= link_to image_tag(place.image.url(:medium)), place, class: "hover" %></span>
@@ -17,20 +15,9 @@
             </span>
           </p>
             
-           <% if place.admin_user == current_admin_user %>
-            <div class="actions">
-                <%= link_to 'Edit', edit_place_path(place) %>
-                <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-            <% end %>
         </div>
 
 
     </div>
 <% end %>
-</div>
-</div>
 
-<div class="center">
-   <%= will_paginate @places, renderer: BootstrapPagination::Rails %>
-</div>

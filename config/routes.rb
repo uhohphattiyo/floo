@@ -18,8 +18,7 @@ Rails.application.routes.draw do
 
 
 #favorites
-  resources :favorite_places, only: [:create, :destroy]
-
+  resources :favorite_places
 
 
   # The priority is based upon order of creation: first created -> highest priority.
