@@ -1,11 +1,12 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin_user!, except: [:index, :show]
+  respond_to :html, :js
 
   def index
         @places = Place.all 
         unless      
-        @places = Place.search(params[:kind], params[:location_id]).paginate(:page => params[:page], :per_page => 16)
+        @places = Place.search(params[:kind], params[:location_id]).paginate(:page => params[:page], :per_page => 20)
         end
   end
 
@@ -15,6 +16,7 @@ class PlacesController < ApplicationController
 
 
   def show
+ 
   end
 
   

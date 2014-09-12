@@ -4,21 +4,30 @@ class FavoritePlacesController < ApplicationController
  before_action :authenticate_user!
   
  def index
-  @places = current_user.favorite_places
+  @places = current_user.favorite_places.all
  end
 
 
   def create
-    if Favorite.create(favorited: @place, user: current_user)
-      redirect_to @place, notice: 'Place has been favorited'
+
+    if Favorite.create(favorited: @place, user: current_user)    
+    respond_to do |format|
+      format.html {redirect_to @place, notice: 'Place has been favorited'}
+      format.js
+    end
     else
-      redirect_to @place, alert: 'Something went wrong. *womp womp*'
+    respond_to do |format|
+      format.html {redirect_to @place, alert: 'Something went wrong. *womp womp*' }
+      format.js
+    end
     end
   end
   
   def destroy
     Favorite.where(favorited_id: @place.id, user_id: current_user.id).first.destroy
-    redirect_to @place, notice: 'Place is no longer a favorite'
+    respond_to do |format|
+      redirect_to @place, notice: 'Place is no longer a favorite'
+    end
   end
 
 
