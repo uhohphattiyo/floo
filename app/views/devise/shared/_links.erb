@@ -17,9 +17,12 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
+<br>
+
+<p>or login via</p>
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %><br />
+    <%= link_to user_omniauth_authorize_path(:facebook) do %> <span title="log in via facebook"><i class="fa fa-facebook-square"></i> <% end %><br />
   <% end -%>
 <% end -%>
