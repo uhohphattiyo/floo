@@ -26,7 +26,7 @@
           <li><%= link_to edit_user_registration_path do %> <span title="edit account"><i class="fa fa-wrench"></i> <% end %></span></li>
           <li><%= link_to destroy_user_session_path, method: :delete do %> <span title="log out"><i class="fa fa-sign-out"></i> <% end %></span></li>
         <% else %>
-          <li><%= link_to new_user_session_path do %> <span title="log out"><i class="fa fa-sign-in"></i> <% end %></span></li>
+          <li><%= link_to new_user_session_path do %> <span title="log in"><i class="fa fa-sign-in"></i> <% end %></span></li>
           
         <% end %>
     </ul>
