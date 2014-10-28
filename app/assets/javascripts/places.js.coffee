@@ -7,3 +7,8 @@ $ ->
     $('#places').masonry
       itemSelector: '.box'
       isFitWidth: true
+
+
+$ ->
+  $("a[data-remote]").on "ajax:success", (e, data, status, xhr) ->
+    alert "The place was favorited."

@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
 
   resources :cities
-  resources :places
+  
+  resources :places do
+    member do
+      post "favorite"
+    end
+  end
   get "admin" => "pages#admin"
 
   devise_for :users, 
@@ -17,8 +22,17 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy"
 
 
+
 #favorites
   resources :favorite_places
+
+
+#blog
+  resources :blogs
+# get "blog" => "blogs#index"
+  #Posts
+  resources :posts
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
