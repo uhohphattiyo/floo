@@ -78,29 +78,31 @@
  <br>
  <br>
 
- <div class="heart">
- <p class="text-center">
- <% if current_user %>
-    <%- unless current_user.favorite_places.exists?(id: @place.id) -%>
-       <%= link_to favorite_places_path(@place), remote: true, method: :post do %>
-             <span title="Favorite this Place"><i class="glyphicon glyphicon-heart-empty"></i></span>
-             <% end %>
-        <%- else -%>
-          <%= link_to @favorite_place, remote: true,  method: :update_attributes %>
+<div class="heart">
+        <p class="text-center">
+          <% if current_user %>
+          <% if !current_user.favorite_places.exists?(id: @place.id) %>
+          <a id="favoritePlaceBtn" href="#">
+            <span title="Favorite this Place"><i class="glyphicon glyphicon-heart-empty"></i></span>
+          </a>
+          <% else %>
+          <a id="unfavoritePlaceBtn" href="#">
             <span title="Un-Favorite this Place"><i class="glyphicon glyphicon-heart"></i></span>
-    <% end %>
-  <% end %>
-<% end %>
-</p>
-</div>
+          </a>
+          <% end %>
+          <% end %>
+        </p>
+      </div>
 
- </div>
+    </div>
 
 
-</div>
+  </div>
+
 <% if @place.admin_user == current_admin_user %>
 
 
 <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
 <% end %>
+
 

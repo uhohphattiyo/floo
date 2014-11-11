@@ -8,9 +8,10 @@ Rails.application.routes.draw do
 
   resources :cities
   
-  resources :places do
+resources :places do
     member do
       post "favorite"
+      post "unfavorite"
     end
   end
   get "admin" => "pages#admin"
