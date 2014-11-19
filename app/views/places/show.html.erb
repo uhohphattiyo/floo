@@ -78,26 +78,7 @@
  <br>
  <br>
 
-<div class="heart">
-        <p class="text-center">
-          <% if current_user %>
-          <% if !current_user.favorite_places.exists?(id: @place.id) %>
-          <a id="favoritePlaceBtn" href="#">
-            <span title="Favorite this Place"><i class="glyphicon glyphicon-heart-empty"></i></span>
-          </a>
-          <% else %>
-          <a id="unfavoritePlaceBtn" href="#">
-            <span title="Un-Favorite this Place"><i class="glyphicon glyphicon-heart"></i></span>
-          </a>
-          <% end %>
-          <% end %>
-        </p>
-      </div>
 
-    </div>
-
-
-  </div>
 
 <% if @place.admin_user == current_admin_user %>
 
