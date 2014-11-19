@@ -14,6 +14,26 @@ class PlacesController < ApplicationController
 
   end
 
+  def favorite
+    @favorite = current_user.favorites.new({:place_id => params[:id]})
+ 
+    respond_to do |format|
+      if @favorite.save
+        format.json { head :no_content }
+      else
+        format.json { render json: @favorite.errors, status: :unprocessable_entity }
+      end
+  end
+end
+
+  def unfavorite
+    @favorite = current_user.favorites.where({:place_id => params[:id]}).first
+    @favorite.destroy
+
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
 
   def show
  

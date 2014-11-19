@@ -13,12 +13,12 @@ class FavoritePlacesController < ApplicationController
     if Favorite.create(favorited: @place, user: current_user)    
     respond_to do |format|
       format.html {redirect_to @place, notice: 'Place has been favorited'}
-      format.js
+      format.js 
     end
     else
     respond_to do |format|
       format.html {redirect_to @place, alert: 'Something went wrong. *womp womp*' }
-      format.js
+      format.js 
     end
     end
   end
@@ -30,8 +30,19 @@ class FavoritePlacesController < ApplicationController
     end
   end
 
+  def show
+    @favorite_place = FavoritePlace.find(params[:id])
+  end
 
-  
+  def update
+    @favorite_place = FavoritePlace.find(params[:id])
+    @favorite_place.update_attributes[params[:place]]
+    respond_to do |format|
+        format.html { redirect_to @place }
+        format.js 
+    end  
+  end
+
   private
   
 

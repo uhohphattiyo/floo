@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141111075616) do
+=======
+ActiveRecord::Schema.define(version: 20141111080820) do
+>>>>>>> ccfbab7113fecbcbec732b85696c2770b646d4ab
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -45,6 +49,11 @@ ActiveRecord::Schema.define(version: 20141111075616) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "blogs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cities", force: true do |t|
     t.datetime "created_at"
@@ -92,10 +101,16 @@ ActiveRecord::Schema.define(version: 20141111075616) do
     t.integer  "city_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "place_id"
   end
 
   add_index "places", ["admin_user_id"], name: "index_places_on_admin_user_id"
   add_index "places", ["location_id"], name: "index_places_on_location_id"
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
