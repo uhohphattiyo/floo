@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
 
+  resources :kinds
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

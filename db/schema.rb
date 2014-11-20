@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119084450) do
+ActiveRecord::Schema.define(version: 20141120042714) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 20141119084450) do
   end
 
   add_index "cities", ["admin_user_id"], name: "index_cities_on_admin_user_id"
+
+  create_table "kinds", force: true do |t|
+    t.string "name"
+  end
 
   create_table "places", force: true do |t|
     t.integer  "location_id"
