@@ -1,7 +1,0 @@
-<%  if @place.favorited %>
-	$(' #<%= @place.id %>').html("true");
-	console.log ("<%= @place.name %> has been favorited.");
-<% else %>
-	$(' #<%= @place.id %>').html("false");
-	console.log ("<%= @place.name %> is not a favorite.");
-<% end %>

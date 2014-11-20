@@ -8,12 +8,9 @@ Rails.application.routes.draw do
 
   resources :cities
   
-resources :places do
-    member do
-      post "favorite"
-      post "unfavorite"
-    end
-  end
+resources :places 
+  
+  
   get "admin" => "pages#admin"
 
   devise_for :users, 
@@ -24,8 +21,7 @@ resources :places do
 
 
 
-#favorites
-  resources :favorite_places
+
 
 
 #blog
