@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+c<p id="notice"><%= notice %></p>
 
 <%= link_to 'Home', cities_path, class: "btn btn-default btn-xs" %>
 
@@ -54,6 +54,8 @@
     </div>
 <% end %>
 </div>   
+<div class="row">
+</div>
 
 <div class="center">
    <%= will_paginate @places, renderer: BootstrapPagination::Rails %>

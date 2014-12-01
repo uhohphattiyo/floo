@@ -138,6 +138,7 @@ i {
 	width: 214px;
 }
 
+
 .box img {
 	width: 100%;
 }
@@ -156,6 +157,8 @@ i {
 	float:left;
 	text-align: center;
 }
+
+
 
 
 $table-cell-padding: 15px; 
@@ -246,5 +249,10 @@ body {
 	padding-top: 10px;
 }
 
+.hide-iframe {
+  visibility: hidden;
+  position: absolute;
+  left: -999em;
+}
 
 @import 'bootstrap';
