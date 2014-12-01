@@ -26,6 +26,7 @@ gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.6.0'
 gem "geocoder"
+gem 'newrelic_rpm'
 
 
 
