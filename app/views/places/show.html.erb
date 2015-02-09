@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Back', :back, class: "btn btn-default btn-xs" %>
-<br>
-<br>
-<br>
+<div class="blank-row"></div>
+<div class="blank-row"></div>
 
 <div itemscope itemtype="http://schema.org/FoodEstablishment">
   
   <div class="row">
-    <div class="col-md-offset-1 col-md-6">
+    <div class="col-md-6">
       <p>
       	<span itemprop="photo"><%= image_tag @place.image.url(:medium) %></span>
       </p>
@@ -58,7 +57,7 @@
 
     </div>
   
-  <div class="col-md-3">
+  <div class="col-md-6">
   
 <% if @place.admin_user == current_admin_user %>  
    <p>
@@ -73,17 +72,17 @@
 <% end %>
       <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x250&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
 
- <br>
- <br>  
- <br>
- <br>
-
-
+<div class="blank-row"></div>
+<div class="blank-row"></div>
+<div class="blank-row"></div>
 
 <% if @place.admin_user == current_admin_user %>
 
 
 <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
 <% end %>
-
+<div class="blank-row"></div>
+<div class="blank-row"></div>
+<div class="blank-row"></div>
+<div class="blank-row"></div>
 
