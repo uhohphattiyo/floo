@@ -1,14 +1,38 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:600);
 @import url(http://fonts.googleapis.com/css?family=Lobster+Two);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
 
-$font-family-sans-serif: 'Raleway', 'Helvetica';
+$font-family-sans-serif: 'Oswald', 'Helvetica';
+$font-weight: '400';
 
+.blank-row{
+	height: 50px;
+}
+
+.site-wrapper {
+	background: url('https://s3.amazonaws.com/floo/mate-less-opacity.png');
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	font-family: 'Oswald';
+	font-weight: 700;
+}
+
+.glyphicon-asterisk {
+	color: Red;
+}
+
+.innner-cover {
+	background: rgba(255, 255, 255, .7);
+	font-size: 50px;
+}
 
 
 .home-title {
-	font-family: 'Lobster Two', cursive;
+	font-family: 'Oswald';
 	color: Black;
 	font-size: 80px;
 	text-align: Center;

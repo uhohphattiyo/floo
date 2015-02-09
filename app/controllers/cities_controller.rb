@@ -3,9 +3,7 @@ class CitiesController < InheritedResources::Base
   before_action :authenticate_admin_user!, except: [:index, :show]
 
  def index
-    @cities = City.all.paginate(:page => params[:page], :per_page => 16)
- 
-
+    @cities = City.all
  end
 
 
