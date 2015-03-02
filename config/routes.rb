@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
 
-  resources :cities
-  
-resources :places 
+  resources :cities  
+  resources :places 
+  resources :kinds
   
   
   get "admin" => "pages#admin"
