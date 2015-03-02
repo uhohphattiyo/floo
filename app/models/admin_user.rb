@@ -6,6 +6,7 @@ class AdminUser < ActiveRecord::Base
 
   has_many :places
   has_many :cities
+  has_many :kinds
   has_many :blogs
   has_many :posts, through: :blogs
   accepts_nested_attributes_for :blogs

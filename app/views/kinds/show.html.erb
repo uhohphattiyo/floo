@@ -1,9 +1,65 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @kind.name %>
-</p>
+<%= link_to 'Home', kinds_path, class: "btn btn-default btn-xs" %>
 
-<%= link_to 'Edit', edit_kind_path(@kind) %> |
-<%= link_to 'Back', kinds_path %>
+
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div itemscope itemtype="http://schema.org/FoodEstablishment">  
+       <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <h1 class="home-title">
+      	     <span itemprop="addressLocality"><%= @kind.name %></span>
+            </h1>   
+      </div>
+    </div>
+
+
+
+<% if @kind.admin_user == current_admin_user %>
+  <%= link_to 'Edit', edit_kind_path(@kind), class: "btn btn-default" %>
+<% end %>
+</div>
+</div>
+
+<div id="places" class="transitions-enabled">
+  <% @places.each do |place| %>     
+    
+      <div class="box panel panel-default">
+          <div id="image-wrapper">
+          <span itemprop="photo">
+              <%= link_to image_tag(place.image.url(:medium)), place, class: "hover" %>
+          </span>
+           <p class="image-text text-center"> <span itemprop="name">
+                <%= place.name %>
+            </span>
+          <br>
+         
+            <span itemprop="servesCuisine"><%= ["beer", "chocolate" ,"cocktail", "coffee", "tea", "wine", "juice"] [place.kind_id] %>
+            </span>
+          </p>
+                   
+
+  <% if place.admin_user == current_admin_user %>
+      <div class="actions">
+         <%= link_to 'Edit', edit_place_path(place) %>
+         <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+  <% end %>
+     
+        </div>     
+      
+    </div>
+<% end %>
+</div>   
+
+<div class="row">
+</div>
+
+<div class="center">
+   <%= will_paginate @places, renderer: BootstrapPagination::Rails %>
+</div>
+
+
