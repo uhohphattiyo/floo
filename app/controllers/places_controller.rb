@@ -94,6 +94,6 @@ end
 
     
     def place_params
-      params.require(:place).permit(:location_id, :budget_id, :name, :kind, :description, :image, :address, :dress, :website, :food, :city_id, :latitude, :longitude)
+      params.require(:place).permit(:location_id, :budget_id, :name, :kind_id, :description, :image, :address, :dress, :website, :food, :city_id, :latitude, :longitude)
     end
 end

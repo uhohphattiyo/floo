@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration
       t.integer :location_id
       t.integer :budget_id
       t.string :name
-      t.integer :kind
+      
 
       t.timestamps
     end

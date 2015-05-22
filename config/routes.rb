@@ -2,15 +2,13 @@ Rails.application.routes.draw do
   
   
 
-  resources :kinds
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
 
-  resources :cities
-  
-resources :places 
+  resources :cities  
+  resources :places 
+  resources :kinds
   
   
   get "admin" => "pages#admin"

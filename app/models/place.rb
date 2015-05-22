@@ -3,9 +3,7 @@ class Place < ActiveRecord::Base
 #Relationships
 	belongs_to :admin_user
 	belongs_to :city
-
-	#Favorites
-
+	belongs_to :kind
 
 	
 
@@ -24,8 +22,8 @@ class Place < ActiveRecord::Base
 	after_validation :geocode,  :if => :address_changed?
 
 #Scope/Search
-	def self.search(kind, location_id)
-	  return scoped unless kind.present? || location_id.present?
-	  where(['kind = ? AND location_id = ?', kind, location_id])
+	def self.search(kind_id, location_id)
+	  return scoped unless kind_id.present? || location_id.present?
+	  where(['kind_id = ? AND location_id = ?', kind_id, location_id])
 	end
 end

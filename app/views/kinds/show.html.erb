@@ -1,9 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @kind.name %>
-</p>
+<%= link_to 'Home', kinds_path, class: "btn btn-default btn-xs" %>
 
-<%= link_to 'Edit', edit_kind_path(@kind) %> |
-<%= link_to 'Back', kinds_path %>
+
+<br>
+<br>
+<br>
+
+<div class="row">
+    <div itemscope itemtype="http://schema.org/FoodEstablishment">  
+       <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <h1 class="home-title">
+      	     <span itemprop="addressLocality"><%= @kind.name %></span>
+            </h1>   
+      </div>
+    </div>
+
+
+
+<% if @kind.admin_user == current_admin_user %>
+  <%= link_to 'Edit', edit_kind_path(@kind), class: "btn btn-default" %>
+<% end %>
+</div>
+</div>
