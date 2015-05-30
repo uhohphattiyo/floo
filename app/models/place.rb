@@ -1,7 +1,7 @@
 class Place < ActiveRecord::Base
 
 #Relationships
-	belongs_to :admin_user
+	belongs_to :user
 	belongs_to :city
 	belongs_to :kind
 

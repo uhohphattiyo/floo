@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
         @posts = Post.all 
@@ -10,14 +10,14 @@ def show
 end
 
 def new
-    @post = current_admin_user.posts.build
+    @post = current_user.posts.build
 end
 
 def edit
 end
 
  def create
-    @post = current_admin_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save

@@ -1,6 +1,6 @@
 class KindsController < InheritedResources::Base
   before_action :set_kind, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
  def index
     @kinds = Kind.all
@@ -19,7 +19,7 @@ class KindsController < InheritedResources::Base
   
   
   def new
-    @kind = current_admin_user.kinds.build
+    @kind = current_user.kinds.build
   end
 
   def edit
@@ -27,7 +27,7 @@ class KindsController < InheritedResources::Base
 
 
   def create
-    @kind = current_admin_user.kinds.build(kind_params)
+    @kind = current_user.kinds.build(kind_params)
 
     respond_to do |format|
       if @kind.save

@@ -1,6 +1,6 @@
 class Kind < ActiveRecord::Base
 
-	belongs_to :admin_user
+	belongs_to :user
 
 	has_many :places
 

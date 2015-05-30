@@ -1,6 +1,6 @@
 class CitiesController < InheritedResources::Base
   before_action :set_city, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
  def index
     @cities = City.all
@@ -19,7 +19,7 @@ class CitiesController < InheritedResources::Base
   
   
   def new
-    @city = current_admin_user.cities.build
+    @city = current_user.cities.build
   end
 
   def edit
@@ -27,7 +27,7 @@ class CitiesController < InheritedResources::Base
 
 
   def create
-    @city = current_admin_user.cities.build(city_params)
+    @city = current_user.cities.build(city_params)
 
     respond_to do |format|
       if @city.save

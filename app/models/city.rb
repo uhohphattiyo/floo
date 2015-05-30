@@ -1,6 +1,6 @@
 class City < ActiveRecord::Base
 
-	belongs_to :admin_user
+	belongs_to :user
 	has_many :places
 
 	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }

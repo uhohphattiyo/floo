@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   respond_to :html, :js
 
   def index
@@ -41,7 +41,7 @@ end
 
   
   def new
-    @place = current_admin_user.places.build
+    @place = current_user.places.build
   end
 
   def edit
@@ -49,7 +49,7 @@ end
 
 
   def create
-    @place = current_admin_user.places.build(place_params)
+    @place = current_user.places.build(place_params)
 
     respond_to do |format|
       if @place.save
