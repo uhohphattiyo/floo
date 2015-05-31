@@ -6,7 +6,7 @@ class PlacesController < ApplicationController
   def index
         @places = Place.all 
         unless      
-        @places = Place.search(params[:kind], params[:location_id]).paginate(:page => params[:page], :per_page => 20)
+        @places = Place.search(params[:kind], params[:location_id]).paginate(:page => params[:page], :per_page => 30)
         end
   end
 
@@ -25,6 +25,8 @@ class PlacesController < ApplicationController
       end
   end
 end
+
+
 
   def unfavorite
     @favorite = current_user.favorites.where({:place_id => params[:id]}).first

@@ -42,7 +42,7 @@
           </p>
                    
 
-  <% if place.user == current_user %>
+   <% if current_user != nil && current_user.is_admin? %>
       <div class="actions">
          <%= link_to 'Edit', edit_place_path(place) %>
          <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>

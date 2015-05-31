@@ -23,7 +23,7 @@ class Place < ActiveRecord::Base
 
 #Scope/Search
 	def self.search(kind_id, location_id)
-	  return scoped unless kind_id.present? || location_id.present?
+	  return all unless kind_id.present? && location_id.present?
 	  where(['kind_id = ? AND location_id = ?', kind_id, location_id])
 	end
 end
