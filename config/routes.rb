@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
 
-  resources :cities  
-  resources :places 
+  resources :cities
+  resources :places
   resources :kinds
   
   

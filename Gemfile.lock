@@ -10,7 +10,7 @@ GIT
       mimemagic (= 0.3.0)
 
 GIT
-  remote: git://github.com/gregbell/active_admin.git
+  remote: git://github.com/activeadmin/activeadmin.git
   revision: dce083189c46ad64c8c9a2d34805a080af685bbe
   specs:
     activeadmin (1.0.0.pre1)

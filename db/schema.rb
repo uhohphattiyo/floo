@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530232902) do
+ActiveRecord::Schema.define(version: 20150531011328) do
 
   create_table "blogs", force: true do |t|
     t.datetime "created_at"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150530232902) do
     t.integer  "admin_user_id"
     t.string   "name"
     t.integer  "location_id"
+    t.integer  "user_id"
   end
 
   add_index "cities", ["admin_user_id"], name: "index_cities_on_admin_user_id"
@@ -46,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150530232902) do
     t.integer  "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "admin_user_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -60,9 +60,9 @@ ActiveRecord::Schema.define(version: 20150530232902) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "kind_id"
+    t.integer  "user_id"
   end
 
-  add_index "places", ["admin_user_id"], name: "index_places_on_admin_user_id"
   add_index "places", ["kind_id"], name: "index_places_on_kind_id"
   add_index "places", ["location_id"], name: "index_places_on_location_id"
 

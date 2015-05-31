@@ -21,7 +21,7 @@
           <% end %></li>
       <li><%= link_to root_path do %> <span title="home"><i class="fa fa-home"></i> <% end %></span></li>
       
-      <% if user_signed_in? %>
+      <% if current_user == user_signed_in? %>
          
           <li><%= link_to edit_user_registration_path do %> <span title="edit account"><i class="fa fa-wrench"></i> <% end %></span></li>
           <li><%= link_to destroy_user_session_path, method: :delete do %> <span title="log out"><i class="fa fa-sign-out"></i> <% end %></span></li>

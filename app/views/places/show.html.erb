@@ -59,7 +59,7 @@
   
   <div class="col-md-6">
   
-<% if @place.admin_user == current_admin_user %>  
+<% if @place.user == current_user %>  
    <p>
         <strong>Latitude:</strong>
         <%= @place.latitude %>

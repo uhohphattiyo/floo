@@ -16,7 +16,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'spring',        group: :development
 gem 'ransack',             github: 'ernie/ransack'
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'masonry-rails', '~> 0.2.0'
