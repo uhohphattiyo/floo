@@ -22,15 +22,15 @@ class User < ActiveRecord::Base
   has_many :posts, through: :blogs
   accepts_nested_attributes_for :blogs
   
-  #Favorites
-  has_many :favorites
-  has_many :favorite_places, through: :favorites, source: :favorited, source_type: 'Place'
-  accepts_nested_attributes_for :favorites
 
  #Devise
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
+#Devise-ActiveAdmin
+def is_admin?
+    self.email && ENV['ADMIN_EMAILS'].to_s.include?(self.email)
+end
    
 #Omniauth Authentication
     def self.from_omniauth(auth)
