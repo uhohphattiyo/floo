@@ -17,7 +17,7 @@
           </span>
         
             
-           <% if place.admin_user == current_admin_user %>
+           <% if current_user.try(:is_admin) %>
               <div class="actions">
                 <%= link_to 'Edit', edit_place_path(place) %>
                 <%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %>

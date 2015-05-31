@@ -2,16 +2,28 @@ Rails.application.routes.draw do
 
 
   ActiveAdmin.routes(self)
+  
   resources :cities
   resources :places
   resources :kinds
-  resources :users
+  
   
   
   get "admin" => "pages#admin"
 
+
+
+ 
+    
+
   devise_for :users, 
-  :controllers => {  :registration => 'registration', :omniauth_callbacks => 'users/omniauth_callbacks' }
+      :controllers => {  :registration => 'registration', :omniauth_callbacks => 'users/omniauth_callbacks' }
+  resources :users
+  
+  
+
+
+
   root "cities#index"
   get "about" => "pages#about"
   get "privacy" => "pages#privacy"

@@ -18,7 +18,7 @@
 
 
 
-<% if @kind.user == current_user %>
+<% if current_user.try(:is_admin) %>
   <%= link_to 'Edit', edit_kind_path(@kind), class: "btn btn-default" %>
 <% end %>
 </div>

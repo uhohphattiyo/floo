@@ -1,16 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
+  devise :database_authenticatable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable, :validatable
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable, :validatable
+
 
 
 #Relationships
@@ -23,14 +16,6 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :blogs
   
 
- #Devise
-  devise :database_authenticatable, 
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-
-#Devise-ActiveAdmin
-def is_admin?
-    self.email && ENV['ADMIN_EMAILS'].to_s.include?(self.email)
-end
    
 #Omniauth Authentication
     def self.from_omniauth(auth)

@@ -5,8 +5,3 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-require 'dotenv/tasks'
-
-task :mytask => :dotenv do
-    # things that require .env
-end

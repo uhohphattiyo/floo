@@ -76,10 +76,8 @@
 <div class="blank-row"></div>
 <div class="blank-row"></div>
 
-<% if @place.user == current_user %>
-
-
-<%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
+<% if current_user.try(:is_admin) %>
+    <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-default" %> |
 <% end %>
 <div class="blank-row"></div>
 <div class="blank-row"></div>

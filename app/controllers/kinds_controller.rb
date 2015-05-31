@@ -1,6 +1,6 @@
 class KindsController < InheritedResources::Base
   before_action :set_kind, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
 
  def index
     @kinds = Kind.all

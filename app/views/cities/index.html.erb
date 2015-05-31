@@ -4,36 +4,29 @@
 </div>
 
 <div class="row">
-<div class="col-md-12">
+	<div class="col-md-12">
 		<div id="cities" class="transitions-enabled">
-		<% @cities.each do |city| %>     
+			<% @cities.each do |city| %>     
+		     	<div class="box">   
+		           <%= link_to_unless city.image.content_type == 'image/gif', image_tag(city.image.url(:medium)), city %>
+		            
+		            
+		            <% if current_user != nil && current_user.is_admin? %>
+		            		<div class="actions">
+			                <%= link_to 'Edit', edit_city_path(city) %>
+			                <%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %>
+		            		</div>
+		            		<% end %>
+					
+		    	</div>
 
-
-
-		     <div class="box">   
-		        
-
-			       <%= link_to_unless city.image.content_type == 'image/gif', image_tag(city.image.url(:medium)), city %>
-			   
-		           <% if city.user == current_user %>
-		            <div class="actions">
-		                <%= link_to 'Edit', edit_city_path(city) %>
-		                <%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %>
-		            </div>
-		            <% end %>
-		      </div>
-
-
-		<% end %>
+			<% end %>
+					
 		</div>
-</div>
+	</div>
 
 
-<div class="blackout"></div>
-</div>
-
-
-									
-									
+	<div class="blackout"></div>
+	</div>									
 									
 </div>

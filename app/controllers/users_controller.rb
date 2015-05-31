@@ -1,5 +1,18 @@
+
 class UsersController < ApplicationController
   before_action :set_user, :finish_signup
+  
+  
+
+  def show
+  end
+
+  def destroy
+  end
+
+  def is_admin?
+    self.user_role == 1
+  end
 
 
   def finish_signup
