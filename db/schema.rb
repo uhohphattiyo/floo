@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150531042602) do
+ActiveRecord::Schema.define(version: 20150531064526) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150531042602) do
   create_table "kinds", force: true do |t|
     t.string  "name"
     t.integer "admin_user_id"
+    t.integer "user_id"
   end
 
   add_index "kinds", ["admin_user_id"], name: "index_kinds_on_admin_user_id"
