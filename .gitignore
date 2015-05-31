@@ -57,4 +57,4 @@ config/secrets.yml
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db
+Thumbs.db/config/secrets.yml
