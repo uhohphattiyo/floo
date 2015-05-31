@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  
-  
-, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
 
   resources :cities  
@@ -10,7 +6,7 @@ Rails.application.routes.draw do
   resources :kinds
   
   
-  get "admin" => "pages#admin"
+  #get "admin" => "pages#admin"
 
   devise_for :users, 
   :controllers => {  :registration => 'registration', :omniauth_callbacks => 'users/omniauth_callbacks' }

@@ -15,7 +15,7 @@
 
 			   
 			   
-		           <% if kind.admin_user == current_admin_user %>
+		           <% if kind.user == current_user %>
 		            <div class="actions">
 		                <%= link_to 'Edit', edit_kind_path(kind) %>
 		                <%= link_to 'Destroy', kind, method: :delete, data: { confirm: 'Are you sure?' } %>
